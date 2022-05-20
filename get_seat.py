@@ -8,6 +8,7 @@ from selenium.webdriver.common.by import By
 from config import conf
 import multiprocessing
 import time
+import os
 
 class ssiba_ticket():
     def __init__(self):
@@ -81,6 +82,8 @@ class ssiba_ticket():
                                                value='/html/body/div/div[2]/div[1]/div[2]/div[2]/ul/li[3]/a/div/span[3]/span[1]').text
 
             if R_seat != '0' or S_seat != '0':
+                os.system('alarm.wav')
+                time.sleep(10000)
                 break
             else:
                 time.sleep(0.05)
